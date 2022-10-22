@@ -11,9 +11,7 @@ const ErrorPage = ({ darkMode }) => {
     <div
       className={`flex justify-center flex-col md:flex-row items-center h-[calc(100vh_-_4rem)] text-4xl font-bold text-${color.foreground} bg-${color.background}`}
     >
-        <div>
-            You hit a
-        </div>
+      <div>You hit a</div>
       <div className={`mx-2`}>
         <span className={`flex justify-center items-center text-7xl`}>
           4
@@ -22,12 +20,10 @@ const ErrorPage = ({ darkMode }) => {
           ) : (
             <img src={WheelWhite} alt="Wheel" />
           )}
-          4 
+          4
         </span>
       </div>
-      <div>
-          Page
-      </div>
+      <div>Page</div>
     </div>
   );
 };

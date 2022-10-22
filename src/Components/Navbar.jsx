@@ -13,7 +13,7 @@ const Navbar = ({darkMode, color, handleTheme}) => {
   return (
     <nav className={`flex fixed md:static w-full justify-between transition duration-500 bg-[#000000]/90 text-white backdrop-blur h-16 px-4 md:px-4 z-20`}>
         <div className='flex my-auto'>
-            <Link to='/' className={`font-logo text-md sm:text-2xl border-2 transition border-x-0 border-${color.foreground}`}>Dev. Rahmlad</Link>
+            <Link to='/' className={`font-logo text-md sm:text-2xl border-2 transition border-x-0 border-${color.foreground}`}>Connectify</Link>
         </div>
 
         {/* Toggle button */}
@@ -24,9 +24,7 @@ const Navbar = ({darkMode, color, handleTheme}) => {
         {/* Desktop Nav */}
         <div className='hidden md:flex font-body uppercase my-auto'>
             <NavLink to="/" end className={({isActive}) =>(isActive ? 'px-4 underline decoration-2 underline-offset-4' : 'px-4 hover:underline decoration-2 underline-offset-4 transition duration-500')}>Home</NavLink>
-            <NavLink to='/about' className={({isActive}) =>(isActive ? 'px-4 underline decoration-2 underline-offset-4' : 'px-4 hover:underline decoration-2 underline-offset-4 transition duration-500')}>About</NavLink>
-            <NavLink to='/skills' className={({isActive}) =>(isActive ? 'px-4 underline decoration-2 underline-offset-4' : 'px-4 hover:underline decoration-2 underline-offset-4 transition duration-500')}>Skills</NavLink>
-            <NavLink to='/projects' className={({isActive}) =>(isActive ? 'px-4 underline decoration-2 underline-offset-4' : 'px-4 hover:underline decoration-2 underline-offset-4 transition duration-500')}>Projects</NavLink>
+            <NavLink to='/users' className={({isActive}) =>(isActive ? 'px-4 underline decoration-2 underline-offset-4' : 'px-4 hover:underline decoration-2 underline-offset-4 transition duration-500')}>Users</NavLink>
             <NavLink to='/contact' className={({isActive}) =>(isActive ? 'px-4 underline decoration-2 underline-offset-4' : 'px-4 hover:underline decoration-2 underline-offset-4 transition duration-500')}>Contact</NavLink>
         </div>
 
@@ -40,13 +38,7 @@ const Navbar = ({darkMode, color, handleTheme}) => {
               <NavLink to="/" className={({isActive}) =>(isActive ? 'px-4 underline decoration-2 underline-offset-4' : 'px-4 hover:underline decoration-2 underline-offset-4')} end>Home</NavLink>
             </div>
             <div className='flex justify-center my-4' onClick={showMenu}>
-              <NavLink to='/about' className={({isActive}) =>(isActive ? 'px-4 underline decoration-2 underline-offset-4' : 'px-4 hover:underline decoration-2 underline-offset-4')}>About</NavLink>
-            </div>
-            <div className='flex justify-center my-4' onClick={showMenu}>
-              <NavLink to='/skills' className={({isActive}) =>(isActive ? 'px-4 underline decoration-2 underline-offset-4' : 'px-4 hover:underline decoration-2 underline-offset-4')}>Skills</NavLink>
-            </div>
-            <div className='flex justify-center my-4' onClick={showMenu}>
-              <NavLink to='/projects' className={({isActive}) =>(isActive ? 'px-4 underline decoration-2 underline-offset-4' : 'px-4 hover:underline decoration-2 underline-offset-4')}>Projects</NavLink>
+              <NavLink to='/users' className={({isActive}) =>(isActive ? 'px-4 underline decoration-2 underline-offset-4' : 'px-4 hover:underline decoration-2 underline-offset-4')}>Users</NavLink>
             </div>
             <div className='flex justify-center my-4' onClick={showMenu}>
               <NavLink to='/contact' className={({isActive}) =>(isActive ? 'px-4 underline decoration-2 underline-offset-4' : 'px-4 hover:underline decoration-2 underline-offset-4')}>Contact</NavLink>
