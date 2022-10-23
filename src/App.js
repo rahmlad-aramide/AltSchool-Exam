@@ -6,10 +6,12 @@ import {
   Home,
   Navbar,
   ErrorPage,
-  UserDetails,
+  UserDetail,
   Users,
 } from "./Components";
 import { ThemeContext, theme } from "./Context";
+// import Dynamic from "./Components/Dynamic";
+// import UserDetail from "./Components/UserDetails";
 
 function ErrorFallback({ error, resetErrorBoundary }) {
   return (
@@ -41,10 +43,10 @@ function App() {
           <Route path="/" element={<Home darkMode={darkMode} />} />
           <Route path="/users" element={<Users darkMode={darkMode} />}>
             <Route
-              path=":telephone"
+              path=":username"
               element={
                 <ErrorBoundary FallBackComponent={ErrorFallback}>
-                  <UserDetails color={color} darkMode={darkMode} />
+                  <UserDetail darkMode={darkMode} />
                 </ErrorBoundary>
               }
             />

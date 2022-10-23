@@ -10,16 +10,15 @@ const Skills = ({ darkMode }) => {
   const theme = useContext(ThemeContext);
   const color = darkMode ? theme.dark : theme.light;
   const PER_PAGE = 12;
-  const [page, setPage] = useState(2);
+  const [page, setPage] = useState(1);
   const [loading, setLoading] = useState(true);
   const [users, setUsers] = useState([]);
   const [total, setTotal] = useState(null);
-  const [view, setView] = useState(false);
 
   useEffect(() => {
-    let result = 60;
+    let results = 60;
     const skip = page * PER_PAGE - PER_PAGE;
-    const dataUrl = `https://randomuser.me/api/?results=${result}&seed=rahmlad`;
+    const dataUrl = `https://randomuser.me/api/?results=${results}&seed=dev_rahmlad`;
     axios.get(dataUrl).then((response) => {
       setLoading(false);
       const userData = response.data.results;
@@ -34,6 +33,7 @@ const Skills = ({ darkMode }) => {
       className={`h-[calc(100vh_-_4rem)] overflow-y-auto text-${color.foreground} bg-${color.background}`}
     >
       <div className=" mt-20 md:mt-0">
+        <Outlet />
         <div
           className={`mb-6 text-[${color.foreground}] bg-[${color.background}]`}
         >
@@ -53,7 +53,7 @@ const Skills = ({ darkMode }) => {
             ) : (
               users?.map((user) => (
                 <div
-                  key={user.uuid}
+                  key={user.login.uuid}
                   className={`bg-[${color.foreground}] text-[${color.background}] flex flex-col items-center p-4 rounded shadow-md border`}
                 >
                   <div className="">
@@ -80,13 +80,11 @@ const Skills = ({ darkMode }) => {
                       {user.location.country}
                     </p>
                     <Link
-                      onClick={() => setView(!view)}
-                      to={!view ? user.phone : ""}
+                      to={user.login.username}
                       className="border w-full text-center rounded"
                     >
-                      Telephone No
+                      View Profile
                     </Link>
-                    {view && <Outlet />}
                   </div>
                 </div>
               ))
