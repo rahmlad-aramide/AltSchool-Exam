@@ -17,7 +17,7 @@ const UserDetail = ({ darkMode }) => {
   useEffect(() => {
     let result = 60;
     setLoading(true);
-    const dataUrl = `https://randomuser.me/api/?results=${result}&seed=dev_rahmlad`;
+    const dataUrl = `https://randomuser.me/api/?results=${result}&seed=dev`;
     axios.get(dataUrl).then((response) => {
       const userData = response.data.results;
       setLoading(false);
@@ -104,9 +104,9 @@ const UserDetail = ({ darkMode }) => {
                   onClick={handleNavigate}
                   className="flex items-center p-2 hover:px-0"
                 >
-                  <AiOutlineArrowLeft className="mx-1" /> Go back
+                  <AiOutlineArrowLeft className="mx-1 transition duration-500" /> Go back
                 </button>
-                <h1 className="flex justify-center mt-6 text-3xl font-medium">
+                <h1 className="flex justify-center mt-2 md:mt-6 text-3xl font-medium">
                   About Me
                 </h1>
                 <p className="mx-10 mt-4 mb-10 md:mb-4">
@@ -144,7 +144,7 @@ const UserDetail = ({ darkMode }) => {
                     placeholderSrc={user.picture.thumbnail}
                     src={user.picture.large}
                     alt={user.name.first}
-                    className="w-full h-[calc(100vh_-_5rem)] rounded-4xl"
+                    className="w-screen md:w-full h-auto md:h-[calc(100vh_-_5rem)] rounded-4xl"
                   />
                 </div>
               </div>

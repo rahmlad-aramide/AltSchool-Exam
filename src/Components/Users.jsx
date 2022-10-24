@@ -5,6 +5,8 @@ import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
 import Footer from "./Footer";
 import { Link, Outlet } from "react-router-dom";
+import WheelBlack from "./WheelBlack.svg";
+import WheelWhite from "./WheelWhite.svg";
 
 const Skills = ({ darkMode }) => {
   const theme = useContext(ThemeContext);
@@ -18,7 +20,7 @@ const Skills = ({ darkMode }) => {
   useEffect(() => {
     let results = 60;
     const skip = page * PER_PAGE - PER_PAGE;
-    const dataUrl = `https://randomuser.me/api/?results=${results}&seed=dev_rahmlad`;
+    const dataUrl = `https://randomuser.me/api/?results=${results}&seed=dev`;
     axios.get(dataUrl).then((response) => {
       setLoading(false);
       const userData = response.data.results;
@@ -49,7 +51,13 @@ const Skills = ({ darkMode }) => {
         <div className="">
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 bg-[#ffffff20] backdrop-blur items-center p-4">
             {loading ? (
-              <div>Loading data...</div>
+              <div className="flex justify-center w-screen h-1/2 mt-[20vh] mb-[20vh]">
+              {!darkMode ? (
+                <img src={WheelBlack} alt="Wheel" />
+              ) : (
+                <img src={WheelWhite} alt="Wheel" />
+              )}
+            </div>
             ) : (
               users?.map((user) => (
                 <div
