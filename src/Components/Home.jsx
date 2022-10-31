@@ -15,7 +15,7 @@ const Home = ({darkMode}) => {
           <img src={darkMode? `images/connectWhite.svg`: `images/connectBlack.svg`} alt="Connect" className="h-[50vh]"/>
         </div>
         <div className="h-[20vh]">
-          <h1 className="text-2xl font-bold pt-4 pb-1 text-center">Connectify</h1>
+          <h1 className="text-2xl font-bold pt-4 pb-1 text-center">Alt Exam Connectify</h1>
           <h3 className="mx-4 md:mx-20 text-center">Connect and make new friends with people across the globe</h3>
         </div>
       </div>
